@@ -122,6 +122,8 @@ class catalogActivity : AppCompatActivity() {
                 intento.putExtra("sinopsis", pelicula.sinopsis)
                 intento.putExtra("header", pelicula.header)
                 intento.putExtra("image", pelicula.image)
+
+                context?.startActivity(intento)
             }
 
             return vista
