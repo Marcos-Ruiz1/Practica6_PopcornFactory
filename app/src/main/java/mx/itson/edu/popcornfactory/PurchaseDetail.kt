@@ -18,8 +18,16 @@ class PurchaseDetail : AppCompatActivity() {
         val textDetail: TextView = findViewById(R.id.tdasd)
 
         if(bundle != null){
-            val seatNumber = bundle.getString("numberSeat")
-            textDetail.text = "El asiento comprado es el número $seatNumber"
+            val nombreCliente = bundle.getString("nombreCliente")
+            val tipoPago = bundle.getString("tipoPago")
+            val seatNumber = bundle.getInt("numberSeat")
+
+            textDetail.text = """
+            Detalles de la compra:
+            Nombre del Cliente: $nombreCliente
+            Tipo de Pago: $tipoPago
+            Número de Asiento: $seatNumber
+            """.trimIndent()
         }
 
     }

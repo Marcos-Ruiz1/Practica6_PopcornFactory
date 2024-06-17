@@ -41,8 +41,11 @@ class SeatSelection : AppCompatActivity() {
             selectedRadioButton.setBackgroundResource(R.drawable.radio_disabled)
             Toast.makeText( this, "Enjoy the movie! :D ", Toast.LENGTH_LONG).show()
             val intent: Intent = Intent(this, PurchaseDetail::class.java)
-            intent.putExtra("numberSeat", selectedRadioButton.text.toString())
-           // intent.putExtra("cliente", Cliente("marcos zazueta", "efectivo", selectedRadioButton.text.toString().toInt()))
+            //intent.putExtra("numberSeat", selectedRadioButton.text.toString())
+            var cliente = Cliente("marcos zazueta", "efectivo", selectedRadioButton.text.toString().toInt())
+            intent.putExtra("nombreCliente", cliente.nombre.toString())
+            intent.putExtra("tipoPago", cliente.tipoPago.toString())
+            intent.putExtra("numberSeat", selectedRadioButton.text.toString().toInt())
 
             this.startActivity(intent)
         }
